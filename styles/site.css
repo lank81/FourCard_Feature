@@ -24,6 +24,7 @@
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
     background-color: var(--VeryLightGray);
+    max-width: 1200px;
   }
   /* 5. Improve media defaults */
   img, picture, video, canvas, svg {
@@ -57,18 +58,35 @@
 .attribution a { color: hsl(228, 45%, 44%); }
 
 .container {
-    width: 80%;
+    width: 70%;
     gap: 1rem;
 }
 
-.row {
+.row1 {
+    display: flex;
+    flex-direction: row;
+    width: 55%;
+    gap: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.row2 {
     display: flex;
     flex-direction: row;
     width: 100%;
     gap: 2em;
+    margin-bottom: 2em;
 }
 
 .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex:1;
+}
+
+.col2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,6 +100,7 @@ article {
     width: 100%;
     padding: 1rem;
     border-top-style: ridge;
+    box-shadow: 0 8px 8px -8px var(--Blue);
 }
 
 .supervisor {
@@ -111,6 +130,7 @@ h2 {
 
 p {
     font-weight: 200;
+    font-size: 12px;
 }
 
 .title {
@@ -121,4 +141,30 @@ p {
 
 img {
     float: right;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%; /* Full width for the container */
+        margin: 0 .5em;
+    }
+
+    .row1, .row2 {
+        flex-direction: column; /* Change rows to columns */
+        width: 100%; /* Full width for rows */
+    }
+
+    .col, .col2 {
+        flex: none; /* Reset flex-grow */
+        width: 100%; /* Full width for columns */
+    }
+
+    /* Optional: adjust other styles for smaller screens */
+    h1 {
+        font-size: 1.25rem; /* Adjust heading size */
+    }
+
+    p {
+        font-size: 14px; /* Adjust paragraph size */
+    }
 }
